@@ -27,6 +27,9 @@ char* read_input(void) {
     if (i >= buff_size) {
       buff_size += STR_BUFFER_SIZE;
       str_buff = realloc(str_buff, sizeof(char) * buff_size);
+      if (!str_buff) {
+        fprintf(stderr, "Error when rellocating memory");
+      }
     }
   }
 }
