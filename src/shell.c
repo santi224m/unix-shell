@@ -87,6 +87,7 @@ void builtin_help(void) {
   printf("exit\tExit the shell\n");
   printf("ECHO\tAppend ECHO to the end of the input to print each argument on a new line\n");
   printf("COMMAND > FILE\t Direct the outputs of COMMAND to FILE\n");
+  printf("!!\t Rerun the last command\n");
 }
 
 void builtin_cd(char* new_dir) {
@@ -164,8 +165,16 @@ int main() {
     char** user_args;
     char* last_arg;
     int argc = 0;
+    char* last_command;
 
     user_input = read_input();
+    if (strcmp(user_input, "!!") == 0) {
+      free(user_input);
+      user_input = strdup(last_command);
+    } else {
+      free(last_command);
+      last_command = strdup(user_input);
+    }
     detect_spaces_and_pipes(user_input);
     user_args = parse_args(user_input);
 
