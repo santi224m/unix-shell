@@ -33,17 +33,22 @@ char* read_input(void) {
     }
   }
 }
+
 int main() {
   int status = 1;
   do {
     printf("> ");
-    char* str;
-    str = read_input();
-    while (*str != '\0') {
-      printf("%c", *str);
-      str++;
+    char* user_input;
+    char** user_args;
+
+    user_input = read_input();
+
+    if (strcmp(user_input, "exit") == 0) {
+      status = 0;
     }
-    status = 0;
+
+    free(user_input);
+    free(user_args);
   } while (status);
 
   return 0;
