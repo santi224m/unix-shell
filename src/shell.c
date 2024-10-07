@@ -5,6 +5,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <fcntl.h>
 
 #define STR_BUFFER_SIZE 1024
 #define ARGS_BUFFER_SIZE 64
@@ -101,26 +102,58 @@ void builtin_mkdir(char* path) {
   }
 }
 
-void execute_command(char** user_args) {
-  pid_t pid, wpid;
-  int status;
+  void execute_command(char** user_args) {
+    pid_t pid, wpid;
+    int status;
+    int redirection_pos = -1;
+    char* redirect_path;
 
-  pid = fork();
-
-  if (pid == 0) {
-    // Child process
-    if (execvp(user_args[0], user_args) == -1) {
-      fprintf(stderr, "Error executing commands\n");
+    for (int i = 0; user_args[i] != NULL; i++) {
+      // Check for redirection sign: >
+      if (strcmp(user_args[i], ">") == 0) {
+        redirection_pos = i;
+      }
     }
-  } else if (pid < 0) {
-    fprintf(stderr, "Error when forking\n");
-  } else {
-    // Parent process
-    do {
-      wpid = waitpid(pid, &status, WUNTRACED);
-    } while (!WIFEXITED(status) && !WEXITSTATUS(status));
+
+    int original_stdout_fd = dup(STDOUT_FILENO);
+    if (redirection_pos > -1) {
+      if (user_args[redirection_pos+1] == NULL) {
+        fprintf(stderr, "Missing redirection file\n");
+      }
+
+      redirect_path = user_args[redirection_pos+1];
+      int file_fd = open(redirect_path, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+      user_args[redirection_pos+1] = NULL;
+      user_args[redirection_pos] = NULL;
+      if (dup2(file_fd, STDOUT_FILENO) == -1) {
+          perror("Error redirecting stdout");
+          close(file_fd);
+          return;  // Exit the function
+      }
+      close(file_fd);
+    }
+
+    pid = fork();
+
+    if (pid == 0) {
+      // Child process
+      if (execvp(user_args[0], user_args) == -1) {
+        fprintf(stderr, "Error executing commands\n");
+        exit(EXIT_FAILURE);
+      }
+    } else if (pid < 0) {
+      fprintf(stderr, "Error when forking\n");
+    } else {
+      // Parent process
+      do {
+        wpid = waitpid(pid, &status, WUNTRACED);
+      } while (!WIFEXITED(status) && !WEXITSTATUS(status));
+      if (dup2(original_stdout_fd, STDOUT_FILENO) == -1) {
+        perror("Error restoring stdout");
+      }
+      close(original_stdout_fd);
+    }
   }
-}
 
 int main() {
   int status = 1;
