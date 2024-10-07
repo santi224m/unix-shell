@@ -75,6 +75,14 @@ void detect_spaces_and_pipes(char* user_input) {
   }
 }
 
+void builtin_help(void) {
+  printf("Welcome to this unix shell\n");
+  printf("Commands:\n\n");
+  printf("help\tShow this help menu\n");
+  printf("exit\tExit the shell\n");
+  printf("ECHO\tAppend ECHO to the end of the input to print each argument on a new line\n");
+}
+
 int main() {
   int status = 1;
   do {
@@ -97,6 +105,8 @@ int main() {
       status = 0;
     } else if (strcmp(last_arg, "ECHO") == 0) {
       echo_args(user_args, argc);
+    } else if (strcmp(user_input, "help") == 0) {
+      builtin_help();
     }
 
     free(user_input);
