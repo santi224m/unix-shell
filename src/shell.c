@@ -57,6 +57,12 @@ char** parse_args(char* user_input) {
   return tokens;
 }
 
+void echo_args(char** user_args, int argc) {
+  for (int i = 0; i < argc - 1; i++) {
+    printf("%s\n", user_args[i]);
+  }
+}
+
 int main() {
   int status = 1;
   do {
@@ -64,19 +70,20 @@ int main() {
     char* user_input;
     char** user_args;
     char* last_arg;
+    int argc = 0;
 
     user_input = read_input();
     user_args = parse_args(user_input);
 
     for (int i = 0; user_args[i] != NULL; i++) {
       last_arg = user_args[i];
+      argc = i + 1;
     }
-
 
     if (strcmp(user_input, "exit") == 0) {
       status = 0;
     } else if (strcmp(last_arg, "ECHO") == 0) {
-      printf("User used echo...\n");
+      echo_args(user_args, argc);
     }
 
     free(user_input);
