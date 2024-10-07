@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define STR_BUFFER_SIZE 1024;
+#define STR_BUFFER_SIZE 1024
+#define ARGS_BUFFER_SIZE 64
+#define DELIM " "
 
 char* read_input(void) {
   int buff_size = STR_BUFFER_SIZE;
@@ -34,17 +36,47 @@ char* read_input(void) {
   }
 }
 
+char** parse_args(char* user_input) {
+  char* tok;
+  int buff_size = ARGS_BUFFER_SIZE;
+  char** tokens = malloc(sizeof(char*) * buff_size);
+  int pos = 0;
+
+  tok = strtok(user_input, DELIM);
+  while (tok != NULL) {
+    tokens[pos] = tok;
+    pos++;
+
+    if (pos > buff_size) {
+      buff_size += ARGS_BUFFER_SIZE;
+      tokens = realloc(tokens, buff_size);
+    }
+    tok = strtok(NULL, DELIM);
+  }
+
+  return tokens;
+}
+
 int main() {
   int status = 1;
   do {
     printf("> ");
     char* user_input;
     char** user_args;
+    char* last_arg;
 
     user_input = read_input();
+    user_args = parse_args(user_input);
+
+    for (int i = 0; user_args[i] != NULL; i++) {
+      last_arg = user_args[i];
+    }
+
 
     if (strcmp(user_input, "exit") == 0) {
       status = 0;
+    } else if (strcmp(last_arg, "ECHO") == 0) {
+      printf("User used echo...\n");
     }
 
     free(user_input);
