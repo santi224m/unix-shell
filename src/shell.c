@@ -63,6 +63,16 @@ void echo_args(char** user_args, int argc) {
   }
 }
 
+void detect_spaces(char* user_input) {
+  int i = 0;
+  while (user_input[i]) {
+    if (user_input[i] == ' ') {
+      printf("SPACE\n");
+    }
+    i++;
+  }
+}
+
 int main() {
   int status = 1;
   do {
@@ -73,6 +83,7 @@ int main() {
     int argc = 0;
 
     user_input = read_input();
+    detect_spaces(user_input);
     user_args = parse_args(user_input);
 
     for (int i = 0; user_args[i] != NULL; i++) {
