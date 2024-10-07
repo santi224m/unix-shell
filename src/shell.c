@@ -3,6 +3,8 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 #define STR_BUFFER_SIZE 1024
 #define ARGS_BUFFER_SIZE 64
@@ -88,7 +90,7 @@ void builtin_help(void) {
 void builtin_cd(char* new_dir) {
   int rc = chdir(new_dir);
   if (rc < 0) {
-    fprintf(stderr, "Error chaing directory\n");
+    fprintf(stderr, "Error changing directory\n");
   }
 }
 
@@ -96,6 +98,27 @@ void builtin_mkdir(char* path) {
   int rc = mkdir(path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
   if (rc < 0) {
     fprintf(stderr, "Error creating directory\n");
+  }
+}
+
+void execute_command(char** user_args) {
+  pid_t pid, wpid;
+  int status;
+
+  pid = fork();
+
+  if (pid == 0) {
+    // Child process
+    if (execvp(user_args[0], user_args) == -1) {
+      fprintf(stderr, "Error executing commands\n");
+    }
+  } else if (pid < 0) {
+    fprintf(stderr, "Error when forking\n");
+  } else {
+    // Parent process
+    do {
+      wpid = waitpid(pid, &status, WUNTRACED);
+    } while (!WIFEXITED(status) && !WEXITSTATUS(status));
   }
 }
 
@@ -133,6 +156,8 @@ int main() {
         fprintf(stderr, "Missing path for new directory\n");
       }
       builtin_mkdir(user_args[1]);
+    } else {
+      execute_command(user_args);
     }
 
     free(user_input);
