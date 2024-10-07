@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 #define STR_BUFFER_SIZE 1024
 #define ARGS_BUFFER_SIZE 64
@@ -83,6 +84,13 @@ void builtin_help(void) {
   printf("ECHO\tAppend ECHO to the end of the input to print each argument on a new line\n");
 }
 
+void builtin_cd(char* new_dir) {
+  int rc = chdir(new_dir);
+  if (rc < 0) {
+    fprintf(stderr, "Error chaing directory\n");
+  }
+}
+
 int main() {
   int status = 1;
   do {
@@ -107,6 +115,12 @@ int main() {
       echo_args(user_args, argc);
     } else if (strcmp(user_input, "help") == 0) {
       builtin_help();
+    } else if (strcmp(user_args[0], "cd") == 0) {
+      if (user_args[1] == NULL) {
+        fprintf(stderr, "Missing directory\n");
+      }
+      printf("Changing directory to %s\n", user_args[1]);
+      builtin_cd(user_args[1]);
     }
 
     free(user_input);
