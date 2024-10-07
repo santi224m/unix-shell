@@ -1,0 +1,305 @@
+Sorting...
+Full Text Search...
+abr2gbr/stable 1:1.0.2-5 amd64
+  Converts PhotoShop brushes to GIMP
+
+bleachbit/stable 4.4.2-1 all
+  delete unnecessary files from the system
+
+compass-blend-modes-plugin/stable 0.0.3+20150331~dfsg-3 all
+  use standard color blending functions in Sass
+
+create-resources/stable 0.1.3-6 all
+  shared resources for use by creative applications
+
+escputil/stable 5.3.4.20220624T01008808d602-1 amd64
+  maintenance utility for Epson Stylus printers
+
+fonts-rufscript/stable 010-6 all
+  handwriting-based font for Latin characters
+
+forensics-extra-gui/stable 2.44 all
+  Forensics Environment - extra GUI components (metapackage)
+
+gegl/stable 1:0.4.42-2 amd64
+  Generic Graphics Library Test Program
+
+gimp/stable,now 2.10.34-1+deb12u2 amd64 [installed]
+  GNU Image Manipulation Program
+
+gimp-cbmplugs/stable 1.2.2-1.2 amd64
+  plugins for The GIMP to import/export Commodore 64 files
+
+gimp-data/stable,now 2.10.34-1+deb12u2 all [installed,automatic]
+  Data files for GIMP
+
+gimp-data-extras/stable 1:2.0.2-1.1 all
+  Extra brushes and patterns for GIMP
+
+gimp-gluas/stable 0.1.20-2 amd64
+  Lua environment plug-in for GIMP
+
+gimp-gmic/stable 2.9.4-4+b4 amd64
+  GREYC's Magic for Image Computing - GIMP Plugin
+
+gimp-gutenprint/stable 5.3.4.20220624T01008808d602-1 amd64
+  print plugin for the GIMP
+
+gimp-help-ca/stable 2.10.34-2 all
+  Documentation for the GIMP (Catalan)
+
+gimp-help-common/stable 2.10.34-2 all
+  Data files for the GIMP documentation
+
+gimp-help-cs/stable 2.10.34-2 all
+  Documentation for the GIMP (Czech)
+
+gimp-help-da/stable 2.10.34-2 all
+  Documentation for the GIMP (Danish)
+
+gimp-help-de/stable 2.10.34-2 all
+  Documentation for the GIMP (German)
+
+gimp-help-el/stable 2.10.34-2 all
+  Documentation for the GIMP (Greek)
+
+gimp-help-en/stable 2.10.34-2 all
+  Documentation for the GIMP (English)
+
+gimp-help-en-gb/stable 2.10.34-2 all
+  Documentation for the GIMP (British English)
+
+gimp-help-es/stable 2.10.34-2 all
+  Documentation for the GIMP (Spanish)
+
+gimp-help-fa/stable 2.10.34-2 all
+  Documentation for the GIMP (Farsi)
+
+gimp-help-fi/stable 2.10.34-2 all
+  Documentation for the GIMP (Finnish)
+
+gimp-help-fr/stable 2.10.34-2 all
+  Documentation for the GIMP (French)
+
+gimp-help-hr/stable 2.10.34-2 all
+  Documentation for the GIMP (Croatian)
+
+gimp-help-hu/stable 2.10.34-2 all
+  Documentation for the GIMP (Hungarian)
+
+gimp-help-it/stable 2.10.34-2 all
+  Documentation for the GIMP (Italian)
+
+gimp-help-ja/stable 2.10.34-2 all
+  Documentation for the GIMP (Japanese)
+
+gimp-help-ko/stable 2.10.34-2 all
+  Documentation for the GIMP (Korean)
+
+gimp-help-lt/stable 2.10.34-2 all
+  Documentation for the GIMP (Lithuanian)
+
+gimp-help-nl/stable 2.10.34-2 all
+  Documentation for the GIMP (Dutch)
+
+gimp-help-nn/stable 2.10.34-2 all
+  Documentation for the GIMP (Norwegian)
+
+gimp-help-pt/stable 2.10.34-2 all
+  Documentation for the GIMP (Portuguese)
+
+gimp-help-pt-br/stable 2.10.34-2 all
+  Documentation for the GIMP (Brazilian Portuguese)
+
+gimp-help-ro/stable 2.10.34-2 all
+  Documentation for the GIMP (Romanian)
+
+gimp-help-ru/stable 2.10.34-2 all
+  Documentation for the GIMP (Russian)
+
+gimp-help-sl/stable 2.10.34-2 all
+  Documentation for the GIMP (Slovenian)
+
+gimp-help-sv/stable 2.10.34-2 all
+  Documentation for the GIMP (Swedish)
+
+gimp-help-uk/stable 2.10.34-2 all
+  Documentation for the GIMP (Ukrainian)
+
+gimp-help-zh-cn/stable 2.10.34-2 all
+  Documentation for the GIMP (Simplified Chinese)
+
+gimp-lensfun/stable 0.2.4-1.1 amd64
+  Gimp plugin to correct lens distortion using the lensfun library
+
+gimp-plugin-registry/stable 9.20200928+b1 amd64
+  repository of optional extensions for GIMP
+
+gimp-texturize/stable 2.2-3 amd64
+  generates large textures from a small sample
+
+gir1.2-gegl-0.4/stable 1:0.4.42-2 amd64
+  GObject introspection data for the Generic Graphics Library
+
+gir1.2-vips-8.0/stable 8.14.1-3+deb12u1 amd64
+  GObject introspection data for VIPS
+
+gtkam-gimp/stable 1.0-3+b1 amd64
+  gtkam gimp plugin to open digital camera pictures
+
+gutenprint-doc/stable 5.3.4.20220624T01008808d602-1 all
+  users' guide for Gutenprint and CUPS
+
+gutenprint-locales/stable 5.3.4.20220624T01008808d602-1 all
+  locale data files for Gutenprint
+
+gxmessage/stable 3.4.3-1+b2 amd64
+  xmessage clone based on GTK+
+
+icc-profiles-free/stable 2.0.1+dfsg-1.1 all
+  ICC color profiles for use with color profile aware software
+
+javamorph/stable 0.0.20100201-3 all
+  Java morphing film-make program for pixel picture-input
+
+junior-art/stable 1.30 all
+  Debian Jr. Art
+
+krita/stable 1:5.1.5+dfsg-2 amd64
+  pixel-based image manipulation program
+
+libbullet-extras3.24/stable 3.24+dfsg-2 amd64
+  professional 3D Game Multiphysics Library -- extra libraries
+
+libgegl-0.4-0/stable,now 1:0.4.42-2 amd64 [installed,automatic]
+  Generic Graphics Library
+
+libgegl-common/stable,now 1:0.4.42-2 all [installed,automatic]
+  Generic Graphics Library - common files
+
+libgegl-dev/stable 1:0.4.42-2 amd64
+  Generic Graphics Library (development files)
+
+libgegl-doc/stable 1:0.4.42-2 all
+  Generic Graphics Library (documentation)
+
+libgimp2.0/stable,now 2.10.34-1+deb12u2 amd64 [installed,automatic]
+  Libraries for the GNU Image Manipulation Program
+
+libgimp2.0-dev/stable 2.10.34-1+deb12u2 amd64
+  Headers and other files for compiling plugins for GIMP
+
+libgimp2.0-doc/stable 2.10.34-1+deb12u2 all
+  Developers' Documentation for the GIMP library
+
+libglib2.0-0/stable,now 2.74.6-2+deb12u3 amd64 [installed,automatic]
+  GLib library of C routines
+
+libglib2.0-bin/stable,now 2.74.6-2+deb12u3 amd64 [installed]
+  Programs for the GLib library
+
+libglib2.0-data/stable,now 2.74.6-2+deb12u3 all [installed,automatic]
+  Common files for GLib library
+
+libglib2.0-dev/stable 2.74.6-2+deb12u3 amd64
+  Development files for the GLib library
+
+libglib2.0-dev-bin/stable 2.74.6-2+deb12u3 amd64
+  Development utilities for the GLib library
+
+libglib2.0-doc/stable 2.74.6-2+deb12u3 all
+  Documentation files for the GLib library
+
+libglib2.0-tests/stable 2.74.6-2+deb12u3 amd64
+  GLib library of C routines - installed tests
+
+libgutenprint-common/stable 5.3.4.20220624T01008808d602-1 all
+  support files for the Gutenprint printer driver library
+
+libgutenprint-dev/stable 5.3.4.20220624T01008808d602-1 amd64
+  development files for the Gutenprint printer driver library
+
+libgutenprint-doc/stable 5.3.4.20220624T01008808d602-1 all
+  documentation for the Gutenprint printer driver library
+
+libgutenprint9/stable 5.3.4.20220624T01008808d602-1 amd64
+  runtime for the Gutenprint printer driver library
+
+libgutenprintui2-2/stable 5.3.4.20220624T01008808d602-1 amd64
+  runtime for the Gutenprint printer driver user interface library
+
+libgutenprintui2-dev/stable 5.3.4.20220624T01008808d602-1 amd64
+  development files for the Gutenprint printer driver user interface library
+
+libijs-0.35/stable,now 0.35-15 amd64 [installed,automatic]
+  IJS raster image transport protocol: shared library
+
+libijs-dev/stable 0.35-15 amd64
+  IJS raster image transport protocol: development files
+
+libijs-doc/stable 0.35-15 all
+  IJS raster image transport protocol: documentation
+
+liblablgtk3-ocaml/stable 3.1.3-1 amd64
+  OCaml bindings to Gtk+ version 3 (runtime)
+
+liblablgtk3-ocaml-dev/stable 3.1.3-1 amd64
+  OCaml bindings to Gtk+ version 3 (development files)
+
+liblablgtk3-ocaml-doc/stable 3.1.3-1 all
+  OCaml bindings to Gtk+ version 3 (documentation)
+
+libpcp-import-perl/stable 6.0.3-1.1 amd64
+  Performance Co-Pilot log import Perl module
+
+libskinlf-java/stable 6.7+dfsg-1 all
+  Skin Look and Feel - Skinning Engine for the Swing toolkit
+
+libskinlf-java-demo/stable 6.7+dfsg-1 all
+  Swing Java docking framework - demos and examples
+
+libvips-dev/stable 8.14.1-3+deb12u1 amd64
+  image processing system good for very large ones (dev)
+
+libvips-doc/stable 8.14.1-3+deb12u1 all
+  image processing system good for very large ones (doc)
+
+libvips-tools/stable 8.14.1-3+deb12u1 amd64
+  image processing system good for very large ones (tools)
+
+libvips42/stable 8.14.1-3+deb12u1 amd64
+  image processing system good for very large ones
+
+mate-hud/stable 22.10.3-1 all
+  Run menubar commands, much like the Unity 7 HUD
+
+nip2/stable 8.7.1-4 amd64
+  spreadsheet-like graphical image manipulation tool
+
+potrace/stable 1.16-2 amd64
+  utility to transform bitmaps into vector graphics
+
+printer-driver-gutenprint/stable 5.3.4.20220624T01008808d602-1 amd64
+  printer drivers for CUPS
+
+python3-odf/stable 1.4.2-2 all
+  Python3 API to manipulate OpenDocument files
+
+rabbit/stable 3.0.0-5 all
+  presentation tool using RD, a simple text format
+
+sane/stable 1.0.14-17 amd64
+  scanner graphical frontends
+
+vim-syntax-gtk/stable 20110314-1.1 all
+  Syntax files to highlight GTK+ keywords in vim
+
+xsane/stable 0.999-12+b1 amd64
+  featureful graphical frontend for SANE (Scanner Access Now Easy)
+
+xsane-common/stable 0.999-12 all
+  xsane architecture independent files
+
+xzgv/stable 0.9.2-2+b1 amd64
+  Picture viewer for X with a thumbnail-based selector
+

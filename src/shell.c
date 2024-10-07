@@ -86,6 +86,7 @@ void builtin_help(void) {
   printf("help\tShow this help menu\n");
   printf("exit\tExit the shell\n");
   printf("ECHO\tAppend ECHO to the end of the input to print each argument on a new line\n");
+  printf("COMMAND > FILE\t Direct the outputs of COMMAND to FILE\n");
 }
 
 void builtin_cd(char* new_dir) {
