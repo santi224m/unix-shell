@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/stat.h>
 
 #define STR_BUFFER_SIZE 1024
 #define ARGS_BUFFER_SIZE 64
@@ -91,6 +92,13 @@ void builtin_cd(char* new_dir) {
   }
 }
 
+void builtin_mkdir(char* path) {
+  int rc = mkdir(path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+  if (rc < 0) {
+    fprintf(stderr, "Error creating directory\n");
+  }
+}
+
 int main() {
   int status = 1;
   do {
@@ -119,8 +127,12 @@ int main() {
       if (user_args[1] == NULL) {
         fprintf(stderr, "Missing directory\n");
       }
-      printf("Changing directory to %s\n", user_args[1]);
       builtin_cd(user_args[1]);
+    } else if (strcmp(user_args[0], "mkdir") == 0) {
+      if (user_args[1] == NULL) {
+        fprintf(stderr, "Missing path for new directory\n");
+      }
+      builtin_mkdir(user_args[1]);
     }
 
     free(user_input);
